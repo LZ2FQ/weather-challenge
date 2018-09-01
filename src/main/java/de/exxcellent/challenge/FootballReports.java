@@ -12,8 +12,6 @@ public class FootballReports {
 	  * @return      football team name
 	  */	 
 	 public static String getSmallestGoalDifferenceTeam(List<Map<String, String>> footballData) {
-		 String retVal="";
-		 
-		 return retVal;
+		 return AppUtils.getSmallestValuesSpreadKey(footballData, "Team", "Goals", "GoalsAllowed");
 	 }
 }
