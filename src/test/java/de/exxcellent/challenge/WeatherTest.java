@@ -12,19 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class WeatherTest {
-    
-	private String successLabel = "not successful";
-
-    @Before
-    public void setUp() throws Exception {
-        successLabel = "successful";
-    }
-
-    @Test
-    public void aPointlessTest() {
-        Assert.assertEquals("Expectations met", "successful", successLabel);
-    }
-    
+        
     @Test
     public void smallestTemperatureSpreadTest() {
     	List<Map<String, String>> weatherDataList = new ArrayList<Map<String, String>>();
@@ -54,7 +42,7 @@ public class WeatherTest {
     	dailyMap.put("Day", "3");
     	weatherDataList.add(dailyMap);    
     	
-    	assertTrue("Smallest Temperature is correcly found", 2==WeatherReports.getSmallestTemperatureSpread(weatherDataList));
+    	assertTrue("Smallest Temperature is correcly found", WeatherReports.getSmallestTemperatureSpread(weatherDataList).equals("2"));
     	
     }
         

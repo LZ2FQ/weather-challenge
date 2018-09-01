@@ -16,12 +16,12 @@ public final class App {
 
         // Your preparation code …
         String weatherDataFile = "de/exxcellent/challenge/weather.csv";
-
-        String dayWithSmallestTempSpread = "Someday";     // Your day analysis function call …
-        String teamWithSmallesGoalSpread = "A good team"; // Your goal analysis function call …
-        
         List<Map<String, String>> weatherData = new ArrayList<Map<String, String>>();
         weatherData = WeatherReports.readCSVToList(weatherDataFile);
+
+        String dayWithSmallestTempSpread = WeatherReports.getSmallestTemperatureSpread(weatherData);     // Your day analysis function call …
+        String teamWithSmallesGoalSpread = "A good team"; // Your goal analysis function call …
+        
         
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
         System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallesGoalSpread);
