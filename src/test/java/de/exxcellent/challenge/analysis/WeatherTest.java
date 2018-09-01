@@ -1,4 +1,4 @@
-package de.exxcellent.challenge;
+package de.exxcellent.challenge.analysis;
 
 import static org.junit.Assert.assertTrue;
 
@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
+
+import de.exxcellent.challenge.analysis.WeatherReports;
 
 public class WeatherTest {
         
@@ -40,7 +42,8 @@ public class WeatherTest {
     	dailyMap.put("Day", "3");
     	weatherDataList.add(dailyMap);    
     	
-    	assertTrue("Smallest Temperature is correcly found", WeatherReports.getSmallestTemperatureSpread(weatherDataList).equals("2"));
+    	WeatherReports weather = new WeatherReports(weatherDataList);
+    	assertTrue("Smallest Temperature is correcly found", weather.getSmallestTemperatureSpread().equals("2"));
     	
     }
         

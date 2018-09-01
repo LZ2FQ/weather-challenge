@@ -1,4 +1,4 @@
-package de.exxcellent.challenge;
+package de.exxcellent.challenge.analysis;
 
 import static org.junit.Assert.assertTrue;
 
@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
+
+import de.exxcellent.challenge.analysis.FootballReports;
 
 public class FootballTest {
         
@@ -41,7 +43,8 @@ public class FootballTest {
     	teamMap.put("GoalsAllowed", "45");
     	footballDataList.add(teamMap);    
     	
-    	assertTrue("Football team with smallest goal distance found", FootballReports.getSmallestGoalDifferenceTeam(footballDataList).equals("Liverpool"));
+    	FootballReports football = new FootballReports(footballDataList);
+    	assertTrue("Football team with smallest goal distance found", football.getSmallestGoalDifferenceTeam().equals("Liverpool"));
     	
     }
         
